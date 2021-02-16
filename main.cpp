@@ -1,11 +1,11 @@
-#include "BlackJackConsole.h"
+#include "Console.h"
 
 int
 main(int argc, const char* argv[])
 {
 
-  BlackJackConsole blackJackConsole("Orlyn");
-  blackJackConsole.play();
+  Console console("Orlyn");
+  console.play();
 
   return 0;
 }

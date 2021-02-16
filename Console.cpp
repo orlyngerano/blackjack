@@ -1,8 +1,8 @@
-#include "BlackJackConsole.h"
+#include "Console.h"
 #include <iostream>
 
 void
-BlackJackConsole::play()
+Console::play()
 {
   showGreetings();
   blackJack.startGame();
@@ -29,7 +29,7 @@ BlackJackConsole::play()
 }
 
 bool
-BlackJackConsole::askPlayerPlayToHitOrStand()
+Console::askPlayerPlayToHitOrStand()
 {
   std::cout << "Press 'h' for Hit and 's' for Stand" << std::endl;
   std::string keyInput;
@@ -44,7 +44,7 @@ BlackJackConsole::askPlayerPlayToHitOrStand()
 }
 
 bool
-BlackJackConsole::askPlayerPlay()
+Console::askPlayerPlay()
 {
   std::cout << "Want to continue play? Press 'y' for yes and 'n' for no."
             << std::endl;
@@ -60,7 +60,7 @@ BlackJackConsole::askPlayerPlay()
 }
 
 void
-BlackJackConsole::showGreetings()
+Console::showGreetings()
 {
   std::cout << "Black Jack Game" << std::endl;
   std::cout << "Welcome " << blackJack.getPlayer().getName() << std::endl;
@@ -69,14 +69,14 @@ BlackJackConsole::showGreetings()
 }
 
 void
-BlackJackConsole::showExitMessage()
+Console::showExitMessage()
 {
   std::cout << "Thanks for playing. Bye " << blackJack.getPlayer().getName()
             << std::endl;
 }
 
 void
-BlackJackConsole::showPlayerCardMessage()
+Console::showPlayerCardMessage()
 {
   std::vector<Cards::Card> cards = blackJack.getPlayer().getCards();
   std::string message;
@@ -89,7 +89,7 @@ BlackJackConsole::showPlayerCardMessage()
 }
 
 void
-BlackJackConsole::showGameRoundResultMessage()
+Console::showGameRoundResultMessage()
 {
   std::cout << "-----Game Result-----" << std::endl;
   std::string winner;

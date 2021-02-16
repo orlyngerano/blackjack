@@ -5,13 +5,13 @@
 #include "player.h"
 #include <string>
 
-class BlackJackConsole
+class Console
 {
   Player player;
   BlackJack blackJack;
 
 public:
-  BlackJackConsole(std::string playerName)
+  Console(std::string playerName)
     : player(playerName)
     , blackJack(player)
   {}
