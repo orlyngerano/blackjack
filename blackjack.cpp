@@ -1,8 +1,8 @@
 
 
-#include "blackjack.h"
-#include "cards.h"
-#include "player.h"
+#include "blackjack.hpp"
+#include "cards.hpp"
+#include "player.hpp"
 #include <random>
 void
 BlackJack::endGame()

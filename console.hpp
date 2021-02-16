@@ -1,8 +1,8 @@
-#ifndef BLACKJACKCONSOLE_H
-#define BLACKJACKCONSOLE_H
+#ifndef CONSOLE_HPP
+#define CONSOLE_HPP
 
-#include "blackjack.h"
-#include "player.h"
+#include "blackjack.hpp"
+#include "player.hpp"
 #include <string>
 
 class Console

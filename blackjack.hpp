@@ -1,8 +1,8 @@
-#ifndef BLACKJACK_H
-#define BLACKJACK_H
+#ifndef BLACKJACK_HPP
+#define BLACKJACK_HPP
 
-#include "cards.h"
-#include "player.h"
+#include "cards.hpp"
+#include "player.hpp"
 
 class BlackJack
 {

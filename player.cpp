@@ -1,6 +1,6 @@
 
-#include "player.h"
-#include "cards.h"
+#include "player.hpp"
+#include "cards.hpp"
 
 void
 Player::addCard(Cards::Card card)
