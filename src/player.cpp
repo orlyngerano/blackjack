@@ -10,7 +10,7 @@ Player::addCard(Cards::Card card)
 
 void
 Player::emptyCards()
-{
+{ 
   cards.clear();
 }
 

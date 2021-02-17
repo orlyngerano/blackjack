@@ -10,8 +10,11 @@
 		"args": [
 		  "-std=c++17",
 		  "-stdlib=libc++",
+		  "-I",
+		  "${workspaceFolder}/src", 
 		  "-g",
 		  "${workspaceFolder}/*.cpp",
+		  "${workspaceFolder}/src/*.cpp",
 		  "-o",
 		  "${workspaceFolder}/blackjack"
 		],
