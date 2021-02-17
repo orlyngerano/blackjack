@@ -1,5 +1,4 @@
-#ifndef CARDS_HPP
-#define CARDS_HPP
+#pragma once
 
 #include <string>
 
@@ -69,5 +68,3 @@ unsigned char
 getCardValue(Card card);
 
 }
-
-#endif

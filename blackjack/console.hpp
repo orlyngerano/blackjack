@@ -1,5 +1,4 @@
-#ifndef CONSOLE_HPP
-#define CONSOLE_HPP
+#pragma once
 
 #include "blackjack.hpp"
 #include "player.hpp"
@@ -31,4 +30,3 @@ private:
 
   void showGameRoundResultMessage();
 };
-#endif

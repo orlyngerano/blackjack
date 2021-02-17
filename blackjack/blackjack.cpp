@@ -4,6 +4,7 @@
 #include "cards.hpp"
 #include "player.hpp"
 #include <random>
+
 void
 BlackJack::endGame()
 {
@@ -40,9 +41,9 @@ BlackJack::getWinner()
   unsigned char playerPoints = player.getCardsPoints();
   unsigned char dealerPoints = dealer.getCardsPoints();
 
-  if (playerPoints > 21) {
+  if (playerPoints > blackjack_winning_score) {
     return GameRoundResult::PLAYER_BUSTED;
-  } else if (dealerPoints > 21) {
+  } else if (dealerPoints > blackjack_winning_score) {
     return GameRoundResult::DEALER_BUSTED;
   } else if (playerPoints > dealerPoints) {
     return GameRoundResult::PLAYER_WON;
@@ -125,7 +126,8 @@ BlackJack::dealersTurn()
     dealer.setBetOnCards(true);
   }
 
-  if (player.getCardsPoints() > 21 || dealer.getCardsPoints() > 21) {
+  if (player.getCardsPoints() > blackjack_winning_score ||
+      dealer.getCardsPoints() > blackjack_winning_score) {
     endGameRound();
   } else {
     if (player.isBetOnCards() && dealer.isBetOnCards()) {
@@ -154,7 +156,7 @@ BlackJack::getNextCardFromDeck()
 bool
 BlackJack::isDealerWantToHit()
 {
-  return (dealer.getCardsPoints() < DEALER_SOFTPOINTS) ? true : false;
+  return dealer.getCardsPoints() < dealer_softpoints;
 }
 
 void

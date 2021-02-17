@@ -1,5 +1,4 @@
-#ifndef PLAYER_HPP
-#define PLAYER_HPP
+#pragma once
 
 #include "cards.hpp"
 #include <vector>
@@ -25,5 +24,3 @@ public:
   bool isBetOnCards();
   void setBetOnCards(bool betOnCards);
 };
-
-#endif

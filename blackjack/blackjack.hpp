@@ -1,5 +1,4 @@
-#ifndef BLACKJACK_HPP
-#define BLACKJACK_HPP
+#pragma once
 
 #include "cards.hpp"
 #include "player.hpp"
@@ -58,7 +57,8 @@ private:
   Player dealer;
   Player player;
   std::vector<Cards::Card> cardDeck;
-  unsigned char const DEALER_SOFTPOINTS = 17;
+  const unsigned char dealer_softpoints = 17;
+  const unsigned char blackjack_winning_score = 21;
 
   void dealerHitCard();
 
@@ -72,5 +72,3 @@ private:
 
   void shuffleDeck();
 };
-
-#endif
