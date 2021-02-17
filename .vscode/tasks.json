@@ -11,12 +11,12 @@
 		  "-std=c++17",
 		  "-stdlib=libc++",
 		  "-I",
-		  "${workspaceFolder}/src", 
+		  "${workspaceFolder}", 
 		  "-g",
-		  "${workspaceFolder}/*.cpp",
-		  "${workspaceFolder}/src/*.cpp",
+		  "${workspaceFolder}/blackjack/*.cpp",
+		  "${workspaceFolder}/tests/*.cpp",
 		  "-o",
-		  "${workspaceFolder}/blackjack"
+		  "${workspaceFolder}/blackjack.out"
 		],
 		"options": {
 		  "cwd": "${workspaceFolder}"

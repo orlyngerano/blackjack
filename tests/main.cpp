@@ -1,4 +1,4 @@
-#include "console.hpp"
+#include "blackjack/console.hpp"
 #include <iostream>
 #include <string>
 
