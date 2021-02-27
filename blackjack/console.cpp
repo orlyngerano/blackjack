@@ -1,5 +1,6 @@
 #include "console.hpp"
 #include <iostream>
+#include <map>
 
 void
 Console::play()
@@ -91,37 +92,21 @@ Console::showPlayerCardMessage()
 void
 Console::showGameRoundResultMessage()
 {
-  std::cout << "-----Game Result-----" << std::endl;
-  std::string winner;
-  switch (blackJack.getWinner()) {
-    case BlackJack::PLAYER_BUSTED:
-      winner = "Player busted. Dealer Wins";
-      break;
-    case BlackJack::DEALER_BUSTED:
-      winner = "Dealer busted. Player Wins";
-      break;
-    case BlackJack::PLAYER_WON:
-      winner = "Player won. Player:" +
-               std::to_string((int)blackJack.getPlayer().getCardsPoints()) +
-               " Dealer:" +
-               std::to_string((int)blackJack.getDealer().getCardsPoints());
-      break;
-    case BlackJack::DEALER_WON:
-      winner = "Dealer won. Dealer:" +
-               std::to_string((int)blackJack.getDealer().getCardsPoints()) +
-               " Player:" +
-               std::to_string((int)blackJack.getPlayer().getCardsPoints());
-      break;
-    case BlackJack::DRAW:
-      winner = "Draw. Dealer:" +
-               std::to_string((int)blackJack.getDealer().getCardsPoints()) +
-               " Player:" +
-               std::to_string((int)blackJack.getPlayer().getCardsPoints());
-      break;
+  std::string playerPoints =
+    std::to_string((int)blackJack.getPlayer().getCardsPoints());
+  std::string dealerPoints =
+    std::to_string((int)blackJack.getDealer().getCardsPoints());
 
-    default:
-      break;
-  }
-
-  std::cout << winner << std::endl;
+  std::map<BlackJack::GameRoundResult, std::string> messages = {
+    { BlackJack::PLAYER_BUSTED, "Player busted. Dealer Wins" },
+    { BlackJack::DEALER_BUSTED, "Dealer busted. Player Wins" },
+    { BlackJack::PLAYER_WON,
+      "Player won. Player:" + playerPoints + "Dealer:" + dealerPoints },
+    { BlackJack::DEALER_WON,
+      "Dealer won. Dealer:" + dealerPoints + " Player:" + playerPoints },
+    { BlackJack::DRAW,
+      "Draw. Dealer:" + dealerPoints + " Player:" + playerPoints },
+  };
+  std::cout << "-----Game Result-----" << std::endl
+            << messages[blackJack.getWinner()] << std::endl;
 }
