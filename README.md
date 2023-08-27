@@ -29,3 +29,10 @@ The built file is located in root directory **build**.
 ```bash
 ./BlackJackGame
 ```
+
+## Running in Docker
+
+```bash
+docker build . -t blackjack/blackjack
+docker run -it blackjack/blackjack
+```

@@ -1,8 +1,8 @@
-
-
 #include "blackjack.hpp"
 #include "cards.hpp"
 #include "player.hpp"
+#include <algorithm>
+#include <chrono>
 #include <random>
 
 void
@@ -224,5 +224,6 @@ void
 BlackJack::shuffleDeck()
 {
   unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-  shuffle(cardDeck.begin(), cardDeck.end(), std::default_random_engine(seed));
+  std::shuffle(
+    cardDeck.begin(), cardDeck.end(), std::default_random_engine(seed));
 }
