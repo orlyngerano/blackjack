@@ -5,12 +5,12 @@
 void
 Player::addCard(Cards::Card card)
 {
-  cards.push_back(card);
+  cards.emplace_back(card);
 }
 
 void
 Player::emptyCards()
-{ 
+{
   cards.clear();
 }
 

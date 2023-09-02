@@ -30,7 +30,9 @@ public:
     : dealer("Anthony")
     , player(player)
     , state(GAME_START)
-  {}
+  {
+    cardDeck.reserve(52);
+  }
 
   void endGame();
 

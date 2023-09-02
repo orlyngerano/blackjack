@@ -12,7 +12,9 @@ class Player
 public:
   Player(std::string name)
     : name(name)
-  {}
+  {
+    cards.reserve(4);
+  }
 
   void addCard(Cards::Card card);
 
